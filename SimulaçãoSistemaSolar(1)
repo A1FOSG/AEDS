@@ -1,0 +1,48 @@
+float theta = 0;
+float omega = 0.5;
+
+
+void setup() {
+ size(800,800); 
+ criaEstrelas();
+}
+
+Planeta p = new Planeta();
+
+void draw() {
+ background(0);
+ desenhaEstrelas();
+ desenhaSol();
+ p.Atualiza();
+ p.Desenha();
+}
+
+void desenhaSol() {
+ fill(#F5E640);
+ circle(width/2, height/2, 100);
+ 
+}
+   
+PVector[] estrelas = new PVector[100];
+void criaEstrelas() {
+ for(int i = 0; i < estrelas.length; i++) {
+   float x = random(width);
+   float y = random(height);
+   
+   estrelas[i] = new PVector(x,y);
+ }
+}
+
+float m = 0.01;
+void desenhaEstrelas() {
+ fill(255); 
+ for(int i = 0; i < estrelas.length;i++) {
+   circle(estrelas[i].x, estrelas[i].y, random(3,6));
+   
+   estrelas[i].x += m;
+   estrelas[i].y += m;
+   
+   if (estrelas[i].x > width) estrelas[i].x = 0;
+   if(estrelas[i].y > height)estrelas[i].y = 0;
+ }
+}

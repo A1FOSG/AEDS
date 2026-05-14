@@ -1,0 +1,29 @@
+class Planeta {
+ float theta;
+ float omega;
+ float dist;
+ float tam;
+ int cor;
+ 
+ public Planeta() {
+   this.theta = 0;
+   this.omega = random(-3,3);
+   this.dist = random(250,350);
+   this.tam = random(20,40);
+   this.cor = color(
+   random(255),
+   random(255),
+   random(255));
+ }
+ public void Atualiza() {
+  theta = theta + omega; 
+ }
+ 
+ public void Desenha() {
+   fill(cor);
+   float xp = width/2 + dist * cos(radians(theta));
+   float yp = height/2 + dist * sin(radians(theta));
+ 
+ circle(xp, yp, tam);
+  }
+}

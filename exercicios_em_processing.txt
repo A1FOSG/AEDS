@@ -1,0 +1,14 @@
+void setup() {
+  size(600,600);
+}
+
+void draw() {
+  
+     background(#FFFFFF); //o fundo da tela
+     fill(#A702C1);
+     textSize(40);
+     stroke(#A702C1); //a função stroke define a cor da borda da forma que eu criar
+     rect(mouseX,mouseY, 80,40); //para fazer a figura mexer com o mouse
+     text("Hello World", 10,30);
+  
+}

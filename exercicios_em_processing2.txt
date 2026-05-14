@@ -1,0 +1,15 @@
+void setup() {
+  size(500,6000);
+  background(0);
+}
+
+void draw() {
+  stroke(#CB2F6B);
+  strokeWeight(5);
+  line(pmouseX, pmouseY, mouseX, mouseY);
+  
+}
+
+void mousePressed() {
+  background(0);
+}
